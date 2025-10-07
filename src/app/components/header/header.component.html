@@ -1,0 +1,89 @@
+<div class="unified-header-container">
+  <div class="header-section">
+    <div class="text-center">
+      <img src="assets/header.png" alt="Mini Pokédex" class="header-image">
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-6">
+        <div class="d-flex align-items-center gap-2">
+          <div class="types-scroll-container w-100">
+            <div class="btn-group types-btn-group" role="group">
+              <button
+                class="btn btn-sm"
+                [class.btn-primary]="selectedType === ''"
+                [class.btn-outline-secondary]="selectedType !== ''"
+                (click)="onTypeChange('')">
+                {{ 'filters.all' | translate }}
+              </button>
+              <button
+                *ngFor="let type of availableTypes"
+                class="btn btn-sm"
+                [class.btn-primary]="selectedType === type"
+                [class.btn-outline-secondary]="selectedType !== type"
+                (click)="onTypeChange(type)">
+                {{ type | titlecase }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="d-flex align-items-center gap-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            [placeholder]="'filters.search_placeholder' | translate"
+            [value]="searchTerm"
+            (input)="onSearchInput($event)">
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="d-flex align-items-center gap-2">
+          <div class="btn-group w-100" role="group">
+            <button
+              *ngFor="let limit of quantityOptions"
+              class="btn btn-sm"
+              [class.btn-primary]="pokemonLimit === limit"
+              [class.btn-outline-secondary]="pokemonLimit !== limit"
+              (click)="onLimitChange(limit)">
+              {{ limit }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="d-flex align-items-center gap-2">
+          <div class="btn-group w-100" role="group">
+            <button
+              class="btn btn-sm"
+              [class.btn-primary]="currentView === 'all'"
+              [class.btn-outline-secondary]="currentView !== 'all'"
+              (click)="onViewChange('all')">
+              {{ 'filters.all' | translate }}
+            </button>
+            <button
+              class="btn btn-sm"
+              [class.btn-primary]="currentView === 'favorites'"
+              [class.btn-outline-secondary]="currentView !== 'favorites'"
+              (click)="onViewChange('favorites')">
+              {{ 'filters.favorites_short' | translate }}
+            </button>
+          </div>
+          <button
+            class="btn btn-outline-light btn-sm clear-filters-btn"
+            (click)="clearFilters()"
+            [disabled]="!selectedType && !searchTerm && pokemonLimit === 50 && currentView === 'all'"
+            [title]="'filters.clear_filters' | translate">
+            ✕
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="loading-spinner-container">
+  <div class="spinner-content">
+    <div class="spinner-wrapper" [class]="'size-' + size">
+      <img 
+        src="assets/icon.png" 
+        alt="Loading" 
+        class="spinner-icon">
+    </div>
+    <p class="loading-message" *ngIf="message">{{ message }}</p>
+  </div>
+</div>

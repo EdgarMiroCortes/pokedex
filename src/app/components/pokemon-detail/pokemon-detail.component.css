@@ -1,0 +1,175 @@
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-images-container {
+  height: 350px;
+}
+
+.custom-carousel {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pokemon-detail-image {
+  max-height: 250px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.pokemon-detail-image:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.carousel-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.carousel-counter-left {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-counter {
+  font-weight: 500;
+  color: #6c757d;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid #dee2e6;
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.indicator-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #dee2e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator-btn:hover {
+  background-color: #667eea;
+  transform: scale(1.2);
+}
+
+.indicator-btn.active {
+  background-color: #667eea;
+  transform: scale(1.3);
+}
+
+.favorite-button {
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.favorite-button.btn-warning {
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+.favorite-button.btn-outline-warning {
+  background-color: transparent !important;
+  border-color: #ffc107 !important;
+  color: #ffc107 !important;
+}
+
+.favorite-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}
+
+.type-badge {
+  text-transform: capitalize;
+}
+
+.progress-bar-normal { background-color: #A8A878; }
+.progress-bar-fire { background-color: #F08030; }
+.progress-bar-water { background-color: #6890F0; }
+.progress-bar-electric { background-color: #F8D030; }
+.progress-bar-grass { background-color: #78C850; }
+.progress-bar-ice { background-color: #98D8D8; }
+.progress-bar-fighting { background-color: #C03028; }
+.progress-bar-poison { background-color: #A040A0; }
+.progress-bar-ground { background-color: #E0C068; }
+.progress-bar-flying { background-color: #A890F0; }
+.progress-bar-psychic { background-color: #F85888; }
+.progress-bar-bug { background-color: #A8B820; }
+.progress-bar-rock { background-color: #B8A038; }
+.progress-bar-ghost { background-color: #705898; }
+.progress-bar-dragon { background-color: #7038F8; }
+.progress-bar-dark { background-color: #705848; }
+.progress-bar-steel { background-color: #B8B8D0; }
+.progress-bar-fairy { background-color: #EE99AC; }
+
+.type-normal { background: #A8A878; color: white; }
+.type-fire { background: #F08030; color: white; }
+.type-water { background: #6890F0; color: white; }
+.type-electric { background: #F8D030; color: #333; }
+.type-grass { background: #78C850; color: white; }
+.type-ice { background: #98D8D8; color: #333; }
+.type-fighting { background: #C03028; color: white; }
+.type-poison { background: #A040A0; color: white; }
+.type-ground { background: #E0C068; color: #333; }
+.type-flying { background: #A890F0; color: white; }
+.type-psychic { background: #F85888; color: white; }
+.type-bug { background: #A8B820; color: white; }
+.type-rock { background: #B8A038; color: white; }
+.type-ghost { background: #705898; color: white; }
+.type-dragon { background: #7038F8; color: white; }
+.type-dark { background: #705848; color: white; }
+.type-steel { background: #B8B8D0; color: #333; }
+.type-fairy { background: #EE99AC; color: #333; }

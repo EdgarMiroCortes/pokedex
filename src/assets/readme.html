@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Pokédex - Documentació</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <h1 class="text-primary">Mini Pokédex</h1>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h2 class="text-primary border-bottom pb-2">Descripció</h2>
+                            <p class="text-justify">
+                                Aquest projecte és una prova de selecció que demostra les meves habilitats en desenvolupament web amb Angular. 
+                                L'aplicació permet als usuaris explorar, cercar i gestionar els seus Pokémon favorits utilitzant la PokeAPI.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h2 class="text-primary border-bottom pb-2">Funcionalitats</h2>
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">🏗️ Arquitectura</h5>
+                                            <p class="card-text">Estructura per petits components, serveis, i un data-service des d'un fem tots els GET.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">🔍 Cerca i Filtrat</h5>
+                                            <p class="card-text">Cerca i filtrat de Pokémon per nom i tipus, amb scroll horitzontal si no hi caben tots els tipus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">⚙️ Configuració</h5>
+                                            <p class="card-text">Podem triar la quantitat de Pokemons visualitzats, deixant d'inici 50 com s'especifica.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">⭐ Favorits</h5>
+                                            <p class="card-text">Sistema de preferits amb LocalStorage per guardar els Pokémon favorits.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">💻 Disseny</h5>
+                                            <p class="card-text">Disseny només per escriptori, com es comentava a l'enunciat.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">📊 Detalls</h5>
+                                            <p class="card-text">Vista de detall amb estadístiques completes, amb colors del tipus principal.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">🖼️ Imatges</h5>
+                                            <p class="card-text">Múltiples imatges per cada Pokémon, normals i Shiny.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">⚡ UX</h5>
+                                            <p class="card-text">Spinner de càrrega personalitzat amb una Pokeball i gestió d'errors.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">🧪 Qualitat</h5>
+                                            <p class="card-text">Tests a cada component i als serveis per assegurar la qualitat del codi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-3">
+                                <strong>Nota:</strong> Projecte realitzat tot el mateix dia d'una tirada, per aquest motiu no he realitzat cap commit fins al final. (ReadMe realitzat el dia després)
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h2 class="text-primary border-bottom pb-2">Requisits previs</h2>
+                            <p class="text-justify">
+                                Per executar aquest projecte necessites <span class="badge bg-warning text-dark">Node.js versió 18 o superior</span>. 
+                                Aquesta versió és necessària per la compatibilitat amb Angular 17 i les seves dependències més recents.
+                            </p>
+                            <div class="bg-light p-3 rounded">
+                                <code># Verificar versió de Node.js<br>
+node --version<br><br>
+# Si no tens Node.js 18+, descarrega'l des de:<br>
+# https://nodejs.org/</code>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h2 class="text-primary border-bottom pb-2">Instal·lació</h2>
+                            <div class="bg-light p-3 rounded">
+                                <code>npm install</code>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h2 class="text-primary border-bottom pb-2">Execució</h2>
+                            <div class="bg-light p-3 rounded">
+                                <code>ng serve</code>
+                            </div>
+                            <p class="mt-2">Obre el navegador a <code>http://localhost:4200</code></p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h2 class="text-primary border-bottom pb-2">Tests</h2>
+                            <div class="bg-light p-3 rounded">
+                                <code>ng test</code>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4 pt-3 border-top">
+                            <a href="/" class="btn btn-primary">← Tornar a l'Aplicació</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

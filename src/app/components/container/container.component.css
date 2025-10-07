@@ -1,0 +1,37 @@
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+.detail-section {
+  position: fixed;
+  top: 150px;
+  right: 0;
+  width: 50%;
+  height: calc(100vh - 150px);
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.error-container {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  border: 2px solid #dc3545;
+}
+
+@media (max-width: 991.98px) {
+  .col-lg-6 {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,51 @@
+<div class="app-container">
+    <app-header
+        [availableTypes]="availableTypes"
+        [currentView]="currentView"
+        [selectedType]="selectedType"
+        [searchTerm]="searchTerm"
+        [pokemonLimit]="pokemonLimit"
+        (viewChanged)="onViewChanged($event)"
+        (typeFilterChanged)="onTypeFilterChanged($event)"
+        (searchTermChanged)="onSearchTermChanged($event)"
+        (pokemonLimitChanged)="onPokemonLimitChanged($event)">
+    </app-header>
+
+    <div class="content-container">
+        <div *ngIf="error && !loading" class="d-flex flex-column align-items-center justify-content-center py-5">
+            <div class="error-container">
+                <div class="text-center">
+                <h5 class="text-danger mb-3">⚠️ Error</h5>
+                <p class="text-muted mb-4">{{ error }}</p>
+                <button class="btn btn-gradient" (click)="retryLoad()">
+                    🔄 Reintentar
+                </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-0 h-100" *ngIf="!error">
+            <div class="col" [class.col-lg-6]="selectedPokemon">
+                <app-pokemon-list
+                [pokemons]="filteredPokemons"
+                [favorites]="favorites"
+                [loading]="loading"
+                [detailOpen]="!!selectedPokemon"
+                (pokemonSelected)="onPokemonSelected($event)"
+                (favoriteToggled)="onFavoriteToggled($event)">
+                </app-pokemon-list>
+            </div>
+
+            <div class="col-lg-6" *ngIf="selectedPokemon">
+                <div class="detail-section p-3 bg-white border-start">
+                    <app-pokemon-detail
+                        [pokemon]="selectedPokemon"
+                        [isFavorite]="favorites.includes(selectedPokemon.id)"
+                        (backClicked)="onBackClicked()"
+                        (favoriteToggled)="onFavoriteToggled($event)">
+                    </app-pokemon-detail>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>

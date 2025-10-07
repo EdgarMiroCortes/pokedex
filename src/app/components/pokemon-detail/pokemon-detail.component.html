@@ -1,0 +1,113 @@
+<div class="card h-100" *ngIf="pokemon">
+  <div class="card-header d-flex align-items-center gap-3">
+        <button class="btn btn-gradient" (click)="onBackClick()">
+          {{ 'pokemon.back' | translate }}
+        </button>
+    
+    <div class="d-flex align-items-center gap-3 flex-grow-1">
+      <h1 class="h3 mb-0">{{ pokemon.name | titlecase }}</h1>
+          <button
+            class="btn btn-sm ms-auto favorite-button"
+            [class.btn-warning]="isFavorite"
+            [class.btn-outline-warning]="!isFavorite"
+            (click)="onFavoriteClick()">
+            ★
+          </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="pokemon-images-container">
+          <div class="custom-carousel">
+            <div class="carousel-image-container">
+              <img 
+                [src]="getCurrentImage()"
+                [alt]="pokemon.name"
+                class="img-fluid pokemon-detail-image"
+                loading="lazy">
+            </div>
+            
+            <div class="carousel-controls-row" *ngIf="getPokemonImages().length > 1">
+              <div class="carousel-counter-left">
+                <span class="carousel-counter">
+                  {{ currentImageIndex + 1 }} / {{ getPokemonImages().length }}
+                </span>
+              </div>
+              <div class="carousel-indicators">
+                <button 
+                  *ngFor="let image of getPokemonImages(); let i = index"
+                  class="indicator-btn"
+                  [class.active]="i === currentImageIndex"
+                  (click)="goToImage(i)">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-6">
+            <div class="text-center p-3 bg-light rounded">
+              <div class="text-muted small">{{ 'pokemon.height' | translate }}</div>
+              <div class="fw-bold">{{ formatHeight(pokemon.height) }}</div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="text-center p-3 bg-light rounded">
+              <div class="text-muted small">{{ 'pokemon.weight' | translate }}</div>
+              <div class="fw-bold">{{ formatWeight(pokemon.weight) }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div>
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h5 class="mb-0">{{ 'pokemon.base_stats' | translate }}</h5>
+            <div class="d-flex gap-1 flex-wrap">
+              <span 
+                *ngFor="let type of getPokemonTypes()"
+                class="badge type-badge"
+                [class]="'type-' + type">
+                {{ type | titlecase }}
+              </span>
+            </div>
+          </div>
+          
+          <div class="d-flex flex-column gap-3">
+            <div 
+              *ngFor="let stat of getPokemonStats()"
+              class="stat-item">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="text-capitalize">{{ stat.name }}</span>
+                <span class="fw-bold">{{ stat.value }}</span>
+              </div>
+                  <div class="progress">
+                    <div
+                      class="progress-bar"
+                      [class]="'progress-bar-' + getPrimaryType()"
+                      [style.width.%]="getStatPercentage(stat.value, stat.maxValue)"
+                      role="progressbar">
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div *ngIf="loading" class="d-flex flex-column align-items-center justify-content-center py-5">
+      <app-loading-spinner 
+        [message]="'pokemon.loading_details' | translate" 
+        size="medium">
+      </app-loading-spinner>
+    </div>
+
+    <div *ngIf="!pokemon && !loading" class="text-center py-5">
+      <p class="text-muted fs-5">{{ 'pokemon.no_pokemon_selected' | translate }}</p>
+    </div>
